@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block content %}
+    <h3>Unir PDFs</h3>
+    <form action="/upload_file" method="post" enctype="multipart/form-data">
+        <label for="file-name">Nombre del archivo: </label>
+        <input class="file-load" name="file-name" id="file-name" type="text" required><br>
+        <div class="file">
+                <label for="files">Elegir Archivo </label>
+            <input type="file" name="file" id="files" multiple=""><br>
+        </div>
+        <button type="submit" id="send">Unir </button>
+    </form>
+{% endblock %}
