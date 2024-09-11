@@ -1,0 +1,5 @@
+{
+    "VpcCidr": "10.10.0.0/16",
+    "PrivateSubnet1Cidr": "10.10.1.0/24",
+    "PrivateSubnet2Cidr": "10.10.2.0/24"
+}
