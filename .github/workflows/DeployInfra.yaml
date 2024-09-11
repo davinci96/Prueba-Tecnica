@@ -9,7 +9,7 @@ on:
 name: DeployInfra
 
 env:
-    region: ${{ github.ref == 'refs/heads/main' && 'us-east-1' || (github.ref == 'refs/heads/develop' && 'us-east-2') || (github.ref == 'refs/heads/release' && 'us-west-2') }}
+    region: ${{ github.ref == 'refs/heads/develop' && 'us-east-1' || (github.ref == 'refs/heads/main' && 'us-east-2') || (github.ref == 'refs/heads/release' && 'us-west-2') }}
 
 
 jobs:
