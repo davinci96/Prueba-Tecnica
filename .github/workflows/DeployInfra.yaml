@@ -5,7 +5,7 @@ on:
       - release
       - develop
     paths:
-      - 'aws-Resrcs/finaktiva-cluster/**'
+      - 'aws-Resrcs/**'
 name: DeployInfra
 
 env:
@@ -39,24 +39,24 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install -g aws-cdk
-          cd aws-Resrcs/finaktiva-cluster
+          cd aws-Resrcs
           ls -l
           pip install -r requirements.txt
 
       - name: Bootstrap CDK
         run: |
-          cd aws-Resrcs/finaktiva-cluster
+          cd aws-Resrcs
           cdk bootstrap
 
       - name: Deploy Infra
         run: |
-          cd aws-Resrcs/finaktiva-cluster
+          cd aws-Resrcs
           echo "Deploying to development environment..."
           cdk deploy VpcStack EcrStack --require-approval never
 
       - name: Deploy Dynamodb Elasticache
         run: |
-          cd aws-Resrcs/finaktiva-cluster
+          cd aws-Resrcs
           echo "Deploying to development environment..."
           cdk deploy DynamoDbStack CacheStack --require-approval never
 
@@ -100,29 +100,29 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install -g aws-cdk
-          cd aws-Resrcs/finaktiva-cluster
+          cd aws-Resrcs
           ls -l
           pip install -r requirements.txt
 
       - name: Bootstrap CDK
         run: |
-          cd aws-Resrcs/finaktiva-cluster
+          cd aws-Resrcs
           cdk bootstrap
 
       - name: Deploy ECS
         run: |
-          cd aws-Resrcs/finaktiva-cluster
+          cd aws-Resrcs
           echo "Deploying to development environment..."
           cdk deploy EcsStack --require-approval never
 
       - name: Deploy ELB
         run: |
-          cd aws-Resrcs/finaktiva-cluster
+          cd aws-Resrcs
           echo "Deploying to development environment..."
           cdk deploy ElbStack --require-approval never
 
       - name: Deploy CloudWatch
         run: |
-          cd aws-Resrcs/finaktiva-cluster
+          cd aws-Resrcs
           echo "Deploying to development environment..."
           cdk deploy CloudWatchStack --require-approval never

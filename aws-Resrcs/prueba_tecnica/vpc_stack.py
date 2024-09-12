@@ -7,7 +7,7 @@ class VpcStack(Stack):
     def __init__(self, scope: Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        with open("finaktiva_cluster/parameters.json") as f:
+        with open("prueba_tecnica/parameters.json") as f:
             parameters = json.load(f)
 
         vpc_cidr = parameters.get("VpcCidr")
